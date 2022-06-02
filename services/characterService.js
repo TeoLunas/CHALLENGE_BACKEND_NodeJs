@@ -11,7 +11,8 @@ class CharacterService {
     }
 
     async find(){
-        const rta = await models.Character.findAll();
+        const options = { attributes: ['name', 'image'] }
+        const rta = await models.Character.findAll(options);
         return rta;
     }
 
